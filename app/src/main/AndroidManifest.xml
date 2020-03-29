@@ -20,6 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FullScannerActivity"
+            android:theme="@style/AppOverlayTheme"
+            android:label="@string/scanner_activity">
+        </activity>
+
+        <activity android:name=".PaymentActivity"></activity>
+
     </application>
 
 </manifest>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cardless_Android</string>
+    <string name="scanner_activity">ZXing Scanner - Full Activity</string>
 </resources>
