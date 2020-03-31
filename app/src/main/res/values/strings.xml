@@ -4,4 +4,7 @@
 
     <string name="progressRight">Progress right</string>
 
+    <string name="item">Item</string>
+    <string name="price">Price</string>
+
 </resources>

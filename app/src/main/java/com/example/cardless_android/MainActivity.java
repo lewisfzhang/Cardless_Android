@@ -19,13 +19,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        View.OnClickListener launch = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchActivity(FullScannerActivity.class);
+            }
+        };
+        findViewById(R.id.payButton).setOnClickListener(launch);
     }
 
-    public void launchFullActivity(View v) {
-        launchActivity(FullScannerActivity.class);
-    }
-
-    public void launchActivity(Class<?> clss) {
+    private void launchActivity(Class<?> clss) {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             mClss = clss;

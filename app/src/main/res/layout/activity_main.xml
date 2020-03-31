@@ -10,7 +10,6 @@
         android:id="@+id/payButton"
         android:layout_width="240dip"
         android:layout_height="240dip"
-        android:onClick="launchFullActivity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

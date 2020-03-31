@@ -36,7 +36,7 @@
         </activity>
 
         <activity
-            android:name=".Confirmation"
+            android:name=".ConfirmationActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
         </activity>

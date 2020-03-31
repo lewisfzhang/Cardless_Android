@@ -34,4 +34,7 @@ dependencies {
     implementation 'com.github.koushikcse:LoadingButton:1.5'
     implementation 'com.github.razir.progressbutton:progressbutton:2.0.1'
     implementation 'com.google.android.material:material:1.0.0-beta01'
+
+    implementation 'com.android.support:percent:23.0.1'
+
 }
