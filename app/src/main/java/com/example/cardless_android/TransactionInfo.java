@@ -3,6 +3,7 @@ package com.example.cardless_android;
 import java.util.ArrayList;
 import java.util.List;
 
+// FIXME move to separate secure class when finished!
 public class TransactionInfo {
     private static TransactionInfo savedList = null;
     private List<Transaction> list = new ArrayList<>();

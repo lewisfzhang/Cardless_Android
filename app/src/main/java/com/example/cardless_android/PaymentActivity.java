@@ -84,6 +84,13 @@ public class PaymentActivity extends AppCompatActivity {
 
         findViewById(R.id.acceptButton).setOnClickListener(accept);
         findViewById(R.id.cancelButton).setOnClickListener(CANCEL);
+
+        findViewById(R.id.showDetails).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDetails();
+            }
+        });
     }
 
     private void processTransaction() {
@@ -91,6 +98,8 @@ public class PaymentActivity extends AppCompatActivity {
         backAllowed = false;
         cancelButton.setOnClickListener(null); // disable
         cancelButton.setVisibility(View.GONE); // completely remove from layout
+
+        findViewById(R.id.showDetails).setOnClickListener(null); //disable
 
         CountDownTimer timer = new CountDownTimer(1500, 1000) {
             @Override
@@ -108,6 +117,12 @@ public class PaymentActivity extends AppCompatActivity {
 
     private void loadConfirmation() {
         Intent intent = new Intent(this, ConfirmationActivity.class);
+        finish();
+        startActivity(intent);
+    }
+
+    private void showDetails() {
+        Intent intent = new Intent(this, ReceiptActivity.class);
         startActivity(intent);
     }
 

@@ -85,6 +85,7 @@ public class FullScannerActivity extends AppCompatActivity implements ZXingScann
     private void launchPayment(String key) {
         Intent intent = new Intent(this, PaymentActivity.class);
         intent.putExtra("key", key);
+        finish();
         startActivity(intent);
     }
 
