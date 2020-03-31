@@ -38,6 +38,8 @@ public class PaymentActivity extends AppCompatActivity {
         transactionInfo = new TransactionInfo();
         // FIXME: assumes all prices are valid ###.## (ie. $3 = 3.00)
         transactionInfo.addItem(key, "0.00");
+        transactionInfo.addItem("EDGECASEHAHHAHAHAHAH HAHHAHA AHHAHA AHHA", "0.00");
+        transactionInfo.addItem("EDGECASE2", "100000.00");
         for (int i = 0; i < 50; i++) {
             transactionInfo.addItem("Meat"+i, "9.99");
         }
@@ -55,7 +57,7 @@ public class PaymentActivity extends AppCompatActivity {
 
     private void displayPrice() {
         // FIXME
-        String price = "$99.98"; // transactionInfo.getTotal();
+        String price = transactionInfo.getTotal();
         ((TextView) findViewById(R.id.priceText)).setText(price);
     }
 

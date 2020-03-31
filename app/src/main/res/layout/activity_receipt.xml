@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -74,22 +75,34 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recycler"
+                        <com.bosphere.fadingedgelayout.FadingEdgeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:scrollbars="vertical"
+                            app:fel_edge="top|left|bottom|right"
+                            app:fel_size_top="40dp"
+                            app:fel_size_bottom="40dp"
+                            app:fel_size_left="0dp"
+                            app:fel_size_right="0dp"
                             app:layout_constrainedHeight="true"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/receipt"
-                            app:layout_constraintBottom_toTopOf="@id/totalView"
-                            android:requiresFadingEdge="horizontal|vertical"
-                            android:overScrollMode="never"
-                            tools:itemCount="40"
-                            tools:listitem="@layout/row_view" />
+                            app:layout_constraintBottom_toTopOf="@id/totalView" >
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycler"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:scrollbars="vertical"
+                                app:layout_constrainedHeight="true"
+                                android:requiresFadingEdge="horizontal|vertical"
+                                android:overScrollMode="never"
+                                tools:itemCount="40"
+                                tools:listitem="@layout/row_view" />
+                        </com.bosphere.fadingedgelayout.FadingEdgeLayout>
+
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/totalView"
@@ -105,9 +118,7 @@
                                 android:background="#DFDFDF"
                                 android:layout_marginBottom="5dip"/>
 
-                            <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                xmlns:app="http://schemas.android.com/apk/res-auto"
-                                xmlns:tools="http://schemas.android.com/tools"
+                            <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dip">
@@ -117,6 +128,8 @@
                                     android:layout_height="wrap_content"
                                     android:text="TOTAL:"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textStyle="bold"
+                                    android:textSize="22dip"
                                     android:textColor="#000000"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toStartOf="@id/guidelineTotal1"
@@ -129,14 +142,14 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical"
-                                    app:layout_constraintGuide_percent="0.7" />
+                                    app:layout_constraintGuide_percent="0.9" />
 
                                 <androidx.constraintlayout.widget.Guideline
                                     android:id="@+id/guidelineTotal2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical"
-                                    app:layout_constraintGuide_percent="0.2" />
+                                    app:layout_constraintGuide_percent="0.1" />
 
                                 <TextView
                                     android:id="@+id/total_text"
@@ -144,10 +157,12 @@
                                     android:layout_height="wrap_content"
                                     android:text="$0.00"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textSize="22dip"
+                                    android:textStyle="bold"
                                     app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.0"
-                                    app:layout_constraintStart_toStartOf="@id/guidelineTotal1"
+                                    app:layout_constraintEnd_toEndOf="@id/guidelineTotal1"
+                                    app:layout_constraintHorizontal_bias="1.0"
+                                    app:layout_constraintStart_toStartOf="@id/guidelineTotal2"
                                     app:layout_constraintTop_toTopOf="parent" />
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.cardview.widget.CardView>
